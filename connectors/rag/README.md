@@ -1,8 +1,8 @@
-# Conector RAG de exemplo
+# Runtime RAG externo
 
-Este conector de leitura recupera trechos com evidências de um runtime externo.
-O endpoint e o token são injetados em runtime; nenhum endpoint privado, corpus,
-índice vetorial, log sensível ou credencial é versionado.
+O runtime de consulta RAG deste agente é mantido externamente em
+`Academia-de-Contadores/agente-ia-reforma-com-rag`.
 
-O owner deve substituir os valores de exemplo, revisar as classes de dados e
-documentar retenção e permissões antes de ativar o conector.
+Este repositório não versiona runtime, corpus, índices vetoriais, logs,
+endpoints privados ou credenciais. A integração será definida em captura
+posterior, com revisão de dados e permissões.
