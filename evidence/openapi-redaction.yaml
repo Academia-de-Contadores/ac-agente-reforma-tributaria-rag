@@ -1,0 +1,8 @@
+schema_version: '1.0'
+artifact: archive/source-capture-2026-08-06/connectors/actions/searchDayRagCorpus/openapi.yaml
+original_sha256: 44dbc7ffd150a7d8527d67080ebece07c0e0b670ee4e1da0cdf0ab1b2d1bb08b
+redacted_sha256: 28d94218e1e1acff6cacc687674c049c921c4b4972dcacaa8a9c7a5e920ef7f3
+redaction: concrete_endpoint_removed
+history_rewrite_performed: false
+note: The original predated this correction in repository history; no history rewrite
+  was performed.
