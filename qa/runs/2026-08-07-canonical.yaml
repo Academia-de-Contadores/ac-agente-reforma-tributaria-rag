@@ -1,0 +1,7 @@
+schema_version: '1.0'
+profile: canonical
+status: pass_local
+prompt_body: pending_human_review
+runtime: not_verified
+action_e2e: not_verified
+published: not_verified

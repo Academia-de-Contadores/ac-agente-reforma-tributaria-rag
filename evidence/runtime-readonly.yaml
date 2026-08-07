@@ -1,0 +1,7 @@
+schema_version: '1.0'
+repository: agente-ia-reforma-com-rag
+commit: 7bf0006b6e4d487cdcec95d670cbd3b92862505b
+working_tree_clean: true
+inspection_mode: read_only
+availability: not_verified
+e2e_pass: not_verified
