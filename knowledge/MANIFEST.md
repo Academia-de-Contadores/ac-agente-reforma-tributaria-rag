@@ -1,5 +1,9 @@
 # Manifesto do Knowledge original do GPT
 
+> **Escopo histórico:** este manifesto registra a cópia privada capturada em
+> 2026-08-07. O GPT ao vivo auditado em 2026-08-22 tem outra lista de oito
+> anexos, preservada com hashes em `live-2026-08-22/MANIFEST.md`.
+
 - **GPT:** `ac.reforma-tributaria-rag`
 - **Editor:** https://chatgpt.com/gpts/editor/g-6a7259edf2688191b44cec56ff3b7221
 - **Captura integral:** 2026-08-07
