@@ -2,8 +2,8 @@ schema_version: 1
 agent:
   id: ac.reforma-tributaria-rag
   name: Reforma Tributária Day — Consulta RAG
-  version: 0.1.0
-  lifecycle: reconciled-source-capture
+  version: 0.2.0
+  lifecycle: candidate
   owners:
     - Academia-de-Contadores
 catalog:
@@ -26,10 +26,16 @@ identity:
 instructions:
   system: instructions/current-live-2026-08-22.md
   guardrails: instructions/guardrails.md
-skills: []
+skills:
+  - SKILL.md
 connectors:
   - connectors/rag/README.md
   - connectors/actions/searchDayRagCorpus/README.md
+actions:
+  - id: search_day_rag_corpus_rag_search_post
+    status: active
+    schema: connectors/actions/searchDayRagCorpus/openapi.live-2026-09-20.json
+    contract: references/retrieval-contract.md
 evaluations:
   - evaluations/source-capture.md
   - evaluations/live-editor-audit-2026-08-22.md
@@ -47,7 +53,9 @@ evaluations:
   - evaluations/regression/H2.md
   - evaluations/regression/H3.md
   - evaluations/regression/C1.md
-profiles: []
+profiles:
+  - profiles/current/profile.yaml
+  - profiles/legacy/profile.yaml
 data_policy:
   allowed_classes:
     - public
@@ -55,4 +63,7 @@ data_policy:
     - external_write
 distribution:
   canonical_branch: main
+  skill_name: ac-reforma-tributaria-rag
+  skill_root: .
+  default_profile: current
   adapters: []
