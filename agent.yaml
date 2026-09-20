@@ -40,6 +40,8 @@ evaluations:
   - evaluations/source-capture.md
   - evaluations/live-editor-audit-2026-08-22.md
   - evaluations/live-editor-audit-2026-09-20.md
+  - evaluations/parity/questions.yaml
+  - evaluations/parity/local-results-2026-09-20.md
   - evaluations/scenarios/T1.md
   - evaluations/scenarios/T2.md
   - evaluations/scenarios/T3.md
