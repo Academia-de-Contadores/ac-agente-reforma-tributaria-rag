@@ -3,16 +3,19 @@ agent:
   id: ac.reforma-tributaria-rag
   name: Reforma Tributária Day — Consulta RAG
   version: 0.1.0
-  lifecycle: source-capture
+  lifecycle: reconciled-source-capture
   owners:
     - Academia-de-Contadores
 catalog:
   url: https://github.com/Academia-de-Contadores/academia-contadores-agent-catalog
 source_capture:
   status: accessible
-  captured_at: 2026-08-22
+  captured_at: 2026-09-20
   source_url: https://chatgpt.com/gpts/editor/g-6a1b93a521b4819189fda957bcf00115
-  record: evaluations/live-editor-audit-2026-08-22.md
+  record: evaluations/live-editor-audit-2026-09-20.md
+  instructions: instructions/current-live-2026-08-22.md
+  knowledge_manifest: knowledge/MANIFEST.md
+  action_schema: connectors/actions/searchDayRagCorpus/openapi.live-2026-09-20.json
 objectives:
   mission: objectives/mission.md
   metrics: objectives/success-metrics.md
@@ -26,9 +29,11 @@ instructions:
 skills: []
 connectors:
   - connectors/rag/README.md
+  - connectors/actions/searchDayRagCorpus/README.md
 evaluations:
   - evaluations/source-capture.md
   - evaluations/live-editor-audit-2026-08-22.md
+  - evaluations/live-editor-audit-2026-09-20.md
   - evaluations/scenarios/T1.md
   - evaluations/scenarios/T2.md
   - evaluations/scenarios/T3.md
