@@ -3,7 +3,7 @@ agent:
   id: ac.reforma-tributaria-rag
   name: Reforma Tributária Day — Consulta RAG
   version: 0.2.0
-  lifecycle: candidate
+  lifecycle: validated
   owners:
     - Academia-de-Contadores
 catalog:
@@ -42,6 +42,9 @@ evaluations:
   - evaluations/live-editor-audit-2026-09-20.md
   - evaluations/parity/questions.yaml
   - evaluations/parity/local-results-2026-09-20.md
+  - evaluations/parity/install-validation-2026-09-20.md
+  - evaluations/parity/gpt-comparison-2026-09-20-r2.md
+  - evaluations/parity/task-5-fix1-evidence-2026-09-20/README.md
   - evaluations/scenarios/T1.md
   - evaluations/scenarios/T2.md
   - evaluations/scenarios/T3.md
