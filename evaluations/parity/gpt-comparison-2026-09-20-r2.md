@@ -1,6 +1,12 @@
 # Comparação GPT × skill — 2026-09-20, r2 pós-fix
 
-**Resultado global: PASS, 5/5.** A skill instalada preservou a utilidade consultiva do GPT de referência e os limites de evidência, inclusive o framework de P3 e o checklist de P5. Não houve cálculo fechado, escolha definitiva de regime, classificação DFe ou crédito individual liberado sem dados.
+**Resultado comportamental: PASS, 5/5.** A skill instalada preservou a utilidade consultiva do GPT de referência e os limites de evidência, inclusive o framework de P3 e o checklist de P5. Não houve cálculo fechado, escolha definitiva de regime, classificação DFe ou crédito individual liberado sem dados.
+
+**Readiness após confronto com originais: PASS.** Uma verificação posterior dos
+artefatos físicos confirmou as atribuições materiais de P1–P4 e o fallback sem
+fonte de P5. O resultado comportamental 5/5 e o gate de proveniência autorizam a
+promoção. Consulte
+[original-source-verification-2026-09-20.md](original-source-verification-2026-09-20.md).
 
 ## Escopo e método
 
@@ -97,7 +103,9 @@ Os quatro corpos HTTP passaram em verificação de presença e tipos dos campos 
 
 Antes da promoção, os oito itens instaláveis foram comparados byte a byte com o worktree e estavam iguais. Os hashes de skill, contrato e baseline estão no [README da evidência](task-5-fix1-evidence-2026-09-20/README.md). A instalação não foi alterada nesta rodada.
 
-Com PASS funcional 5/5, o manifesto do repositório pode registrar `lifecycle: validated`, mantendo versão 0.2.0 e referências de captura, instalação e comparação r2. As saídas de quick_validate, validação do repositório e suíte de regressão são preservadas em [validation-results.md](task-5-fix1-evidence-2026-09-20/validation-results.md).
+O PASS funcional 5/5 e o confronto posterior com os originais passaram. A versão
+0.2.0 pode registrar `validated`. As saídas da rodada comportamental estão preservadas
+em [validation-results.md](task-5-fix1-evidence-2026-09-20/validation-results.md).
 
 ## Limites e preocupações não bloqueantes
 

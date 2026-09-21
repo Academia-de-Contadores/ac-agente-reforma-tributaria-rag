@@ -1,19 +1,32 @@
 # Como usar a skill Reforma Tributária Day
 
-## Instalar o pacote-fonte
+## Instalar o pacote seletivo
 
-O repositório inteiro é o pacote da skill `ac-reforma-tributaria-rag`, com
-[SKILL.md](SKILL.md) na raiz. Para instalação no Codex, coloque uma cópia ou
-checkout completo em uma pasta de skills reconhecida pelo seu ambiente,
-nomeando a pasta `ac-reforma-tributaria-rag`. Preserve a estrutura relativa de
-`agents/`, `profiles/`, `instructions/`, `knowledge/`, `references/` e
-`connectors/`; copiar somente `SKILL.md` deixa as referências indisponíveis.
-Recarregue a descoberta de skills do ambiente após a instalação.
+O repositório inclui avaliação, testes e governança que não pertencem à
+instalação da skill. Para instalar `ac-reforma-tributaria-rag`, crie a pasta de
+destino com esse nome e copie **somente** estes oito itens, preservando seus
+caminhos relativos:
+
+- `SKILL.md`
+- `agent.yaml`
+- `agents/`
+- `profiles/`
+- `references/`
+- `instructions/`
+- `knowledge/`
+- `connectors/`
+
+Não faça checkout do repositório inteiro dentro da pasta de skills. Não copie
+`.git`, `.github`, `.superpowers`, `scripts/`, `tests/`, `evaluations/`,
+`reports/`, `governance/` ou `docs/`. Copiar somente `SKILL.md` também é
+insuficiente porque quebra as referências relativas. Depois da cópia seletiva,
+recarregue a descoberta de skills do ambiente.
 
 Este procedimento descreve a instalação; o repositório por si só não instala
 nem ativa a skill em todas as sessões. A versão `0.2.0` está em lifecycle
-`candidate`: validação estrutural não comprova comportamento nem disponibilidade
-contínua do serviço.
+`validated`: o comportamento P1–P5 e o confronto das citações materiais com os
+originais preservados passaram. Essa validação não comprova disponibilidade
+contínua do serviço nem substitui validação profissional do caso concreto.
 
 ## Invocar e escolher perfil
 

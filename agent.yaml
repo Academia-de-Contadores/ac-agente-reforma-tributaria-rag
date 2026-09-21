@@ -44,6 +44,7 @@ evaluations:
   - evaluations/parity/local-results-2026-09-20.md
   - evaluations/parity/install-validation-2026-09-20.md
   - evaluations/parity/gpt-comparison-2026-09-20-r2.md
+  - evaluations/parity/original-source-verification-2026-09-20.md
   - evaluations/parity/task-5-fix1-evidence-2026-09-20/README.md
   - evaluations/scenarios/T1.md
   - evaluations/scenarios/T2.md

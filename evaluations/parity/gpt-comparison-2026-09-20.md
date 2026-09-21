@@ -1,5 +1,13 @@
 # Comparação independente com o GPT — 2026-09-20
 
+> **HISTÓRICO / SUPERADO PARA O COMPORTAMENTO ATUAL.** Este arquivo preserva a
+> primeira execução e seus resultados sem recalculá-los. A repetição com a
+> rubrica alinhada ao GPT está em
+> [gpt-comparison-2026-09-20-r2.md](gpt-comparison-2026-09-20-r2.md). A r2 passou
+> 5/5 no comportamento e passou no confronto posterior com originais
+> documentado em
+> [original-source-verification-2026-09-20.md](original-source-verification-2026-09-20.md).
+
 Veredito global histórico, sob a rubrica anterior: **FAIL**. Status: **DONE_WITH_CONCERNS**.
 
 Foram executadas **5/5 perguntas** do [catálogo de paridade](questions.yaml). Sob a rubrica então usada, a skill instalada teve **5/5 PASS** nos comportamentos observados; a comparação com o GPT teve **3 PASS / 2 FAIL**, em P3 e P5. Este registro preserva a avaliação negativa; não promove o agente. A versão permanece `0.2.0`, com lifecycle `candidate`.

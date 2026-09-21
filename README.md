@@ -4,7 +4,7 @@
 | --- | --- |
 | ID | `ac.reforma-tributaria-rag` |
 | Versão | `0.2.0` |
-| Lifecycle | `candidate` |
+| Lifecycle | `validated` |
 | Skill | `$ac-reforma-tributaria-rag` |
 
 ## Propósito
@@ -12,13 +12,16 @@
 Atua como assistente consultivo sobre a Reforma Tributária do Consumo com busca
 RAG no corpus Day V2.3 via serviço externo conectado ao Chroma Cloud.
 
-O repositório inteiro é o pacote-fonte da skill, com [SKILL.md](SKILL.md) na
-raiz e apresentação em [agents/openai.yaml](agents/openai.yaml). A versão é
-candidata; os validadores estruturais não comprovam a operação do serviço.
+O repositório contém o pacote distribuível da skill e também materiais de
+desenvolvimento. O pacote seletivo começa em [SKILL.md](SKILL.md) e usa a
+apresentação em [agents/openai.yaml](agents/openai.yaml). A versão está
+validada: passou no comportamento P1–P5 e no confronto de suas citações
+materiais com os artefatos originais preservados.
 
 ## Usar e manter este agente
 
-Após instalar o pacote completo em uma pasta de skills reconhecida pelo Codex,
+Após instalar somente os oito itens distribuíveis descritos em
+[HOW-TO-USE.md](HOW-TO-USE.md) em uma pasta de skills reconhecida pelo Codex,
 invoque:
 
 ```text

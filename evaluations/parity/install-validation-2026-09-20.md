@@ -97,3 +97,20 @@ Todos os comandos terminaram com exit code 0:
 A sincronização não incluiu outros arquivos ou diretórios no pacote instalado.
 As referências de avaliação no manifesto apontam para evidências do repositório;
 `evaluations/` continua fora da instalação, conforme o escopo original.
+
+## Atualização após confronto com originais — 2026-09-20
+
+O confronto independente entre P1–P5 e os artefatos originais passou. Somente
+`agent.yaml` foi novamente sincronizado por cópia seletiva para incluir a nova
+evidência:
+
+- lifecycle final: `validated`;
+- nova evidência: `evaluations/parity/original-source-verification-2026-09-20.md`;
+- SHA-256 anterior do manifesto instalado:
+  `617072f7eac5c3ca34b3ebcadf48c1c54d02485710f1b03bb45138861d5634d8`;
+- SHA-256 final idêntico na origem e instalação:
+  `6e601ac2d05aed50f808abf73a3f8ab774e2051783bb8bffce657e1fa2d36d29`.
+
+O restante dos 59 arquivos distribuídos não foi alterado. A igualdade do
+manifesto, o inventário restante e os validadores foram repetidos após esta
+sincronização.

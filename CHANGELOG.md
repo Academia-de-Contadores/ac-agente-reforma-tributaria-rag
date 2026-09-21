@@ -4,6 +4,13 @@ Todas as mudanças relevantes deste agente serão registradas aqui.
 
 ## Unreleased
 
+- Confirma a release 0.2.0 como `validated`: o confronto P1–P5 com artefatos
+  originais verificou as atribuições materiais de P1–P4 e o fallback sem fonte
+  de P5.
+- Marca a primeira comparação como histórica/superada, preserva o PASS
+  comportamental r2 e acrescenta o gate de proveniência aprovado.
+- Corrige README/HOW-TO-USE para instalação seletiva dos oito itens
+  distribuíveis, sem checkout completo dentro da pasta de skills.
 - Adiciona manual operacional, referência completa da estrutura e guia de contribuição expandido.
 - Torna os documentos operacionais obrigatórios na validação.
 
