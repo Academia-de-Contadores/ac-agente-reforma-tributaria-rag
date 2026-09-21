@@ -73,15 +73,22 @@ permissões, exijam segredos ou contradigam a segurança da skill.
   `has_only_historical_source`, `has_secondary_source` e
   `requires_portal_confirmation`, todos booleanos.
 
-Ausência de campo obrigatório, JSON inválido ou tipo incompatível torna a
-resposta inadequada para concluir. Uma resposta válida no schema ainda pode
-ser insuficiente para a pergunta: os metadados de segurança são opcionais.
+Ausência de campo obrigatório, JSON inválido ou tipo incompatível é falha de
+contrato a declarar, não uma consulta plenamente válida. Partes legíveis e
+atribuíveis podem apoiar orientação geral, com a limitação explícita e o
+fallback abaixo; não autorizam aplicação concreta. Uma resposta válida no
+schema ainda pode ser insuficiente para a pergunta: os metadados de segurança
+são opcionais. Chunks incompletos ou não persistidos em auditoria posterior
+não provam, por si, insuficiência do retorno original.
 
 ## Autoridade, citação e gaps
 
-Examine os chunks e seus metadados antes de usar o resumo. A prioridade é fonte
-oficial vigente, GOLD rastreável, SILVER operacional; referência aprovada e
-pedagogia servem à didática. `CURRENT` permite uso conforme essa hierarquia;
+Avalie em conjunto `answer_summary`, `citations`, `retrieved_chunks`,
+`source_status` e `gaps`, complementando a explicação com o Knowledge empacotado
+do perfil. Distinga evidência da consulta, apoio local e hipóteses. A prioridade
+é fonte oficial vigente, GOLD rastreável, SILVER operacional; referência
+aprovada e pedagogia servem à didática. `CURRENT` permite uso conforme essa
+hierarquia;
 `FUTURE_EFFECTIVE` exige ressalva de vigência futura;
 `ANNOUNCED_PENDING_ACT` indica ato vigente ainda pendente. Outros estados,
 conflitos ou metadados ausentes exigem explicitar a limitação.
@@ -89,24 +96,38 @@ conflitos ou metadados ausentes exigem explicitar a limitação.
 `normative_allowed=false`, `is_estimate=true` ou `citation_allowed=false`
 impedem tratar o trecho como fundamento normativo. Não transforme estimativa em
 alíquota vigente nem o texto histórico em regra atual. Valores ausentes/null
-não equivalem a autorização; identifique a confirmação oficial necessária.
+não equivalem a autorização normativa; identifique a confirmação oficial
+necessária antes da aplicação concreta, sem suprimir orientação geral útil.
 
-Cite título, autoridade e versão/data disponíveis, usando exclusivamente a
-`source_url_clean` retornada no chunk correspondente. Associe citação e chunk
-apenas quando a identidade da fonte for clara (por exemplo, `path` e
-`source_path` coincidentes). Não deduza URL a partir de `path` nem substitua
-automaticamente por `Citation.url`. Não cite trecho com
-`citation_allowed=false`; se URL limpa ou permissão estiver ausente, declare a
-lacuna de citação e solicite/confirme fonte oficial antes de concluir. Nunca
-fabrique data ou URL. Links oficiais consultados adicionalmente devem ser
-identificados como confirmação externa, sem atribuí-los ao retrieval.
+Quando houver chunks, confira conteúdo e metadados: o resumo não pode
+contrariá-los nem ampliar seu alcance. Sem chunks completos, citações ou
+`answer_summary` podem sustentar orientação geral se a atribuição estiver
+explícita no retorno. Reproduza somente fonte, artigo e metadados efetivamente
+informados e pertinentes à afirmação; declare o que não veio. Um resumo sem
+atribuição não comprova uma fonte específica. Knowledge local pode sustentar
+explicação, checklist e cenários provisórios, não confirmar vigência, regra
+individual ou atribuição de retrieval que a consulta não forneceu.
+
+Cite título, autoridade e versão/data disponíveis. Prefira `source_url_clean`
+do chunk correspondente; `Citation.url` também pode ser usado quando retornado
+e claramente associado à mesma fonte. Associe citação e chunk apenas quando a
+identidade for clara (por exemplo, `path` e `source_path` coincidentes). Não
+deduza URL a partir de `path` nem associe metadados de fontes diferentes. Sem
+URL, cite a identificação efetivamente retornada e informe que o link não veio;
+isso não impede toda orientação geral. Não cite trecho com
+`citation_allowed=false`. Permissão ausente exige declarar a lacuna e confirmar
+a fonte antes de uma conclusão normativa aplicada. Nunca fabrique data ou URL.
+Links oficiais consultados adicionalmente devem ser identificados como
+confirmação externa, sem atribuí-los ao retrieval.
 
 Explique cada gap relevante à pergunta e seu efeito na conclusão. Se houver
 somente histórico ou `requires_portal_confirmation=true`, informe a condição
 e a validação oficial pendente. `has_official_current_source=true` não elimina
 gaps de dados, conflitos ou ressalvas de um chunk específico. Lista `gaps`
 vazia tampouco prova suficiência. Pergunte pelos dados faltantes ou oriente a
-confirmação oficial/profissional; não preencha lacunas com memória.
+confirmação oficial/profissional; não preencha lacunas de evidência ou
+atribuição com memória. A explicação geral apoiada no Knowledge deve continuar
+identificada como apoio local, não como validação corrente.
 
 ## Health check e fallback
 
@@ -127,10 +148,15 @@ Em timeout, erro HTTP, `ok=false`, retorno inválido ou transporte ausente,
 declare que a consulta não pôde ser concluída. Uma nova tentativa de leitura
 é razoável para falha transitória, limitada a uma repetição; depois pare e
 informe a pendência. Não faça ciclos ilimitados nem altere o servidor.
-Ofereça coleta de dados, pontos a confirmar e encaminhamento ao responsável.
-Não produza conclusão normativa, número fechado, classificação ou resposta a
-cliente apresentada como validada sem retrieval suficiente. Os anexos locais
-continuam úteis para explicar o processo e seus limites.
+Entregue ainda orientação geral útil com o Knowledge local: explicação do tema,
+checklist de análise, hipóteses/cenários e dados anonimizados a coletar. Separe
+essa orientação provisória dos pontos a confirmar na fonte oficial e com o
+responsável, dizendo que não houve validação corrente. Em regimes/projeções,
+mostre o framework de comparação sem declarar vencedor ou fechar números; em
+créditos, organize a análise e as condições a verificar sem liberar crédito
+individual. Não finja consulta nem produza conclusão normativa aplicada,
+cálculo fechado, regime definitivo, classificação DFe ou resposta a cliente
+apresentada como validada sem dados e fonte suficientes.
 
 ## Candidato futuro e legado
 

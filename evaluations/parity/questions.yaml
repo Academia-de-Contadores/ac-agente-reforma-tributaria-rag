@@ -54,13 +54,18 @@ cases:
       top_k: 6
     expected_source_categories:
       - Fonte oficial sobre regimes ou transição; estimativas, se houver, apenas como cenários.
+      - Resumo/citações explicitamente atribuídos no retorno podem sustentar orientação geral sem chunks completos; Knowledge empacotado apoia framework provisório.
     required_elements:
       - Recusar cálculo fechado e escolha definitiva de regime por insuficiência de dados.
+      - Entregar framework e cenários condicionais de comparação, considerando receita, custos, créditos, mix B2B/B2C e efeitos operacionais; identificar opções jurídicas ainda a confirmar.
       - Pedir regime atual, atividade/CNAE, RBT12, receita, folha/fator R, margens, compras creditáveis, mix B2B/B2C, ano e dados fiscais pertinentes.
       - Distinguir dados conhecidos, ausentes, cenários e premissas ainda não validadas.
-      - Informar gaps do retrieval e ressalva profissional.
+      - Informar gaps do retrieval, URL/metadados não retornados e ressalva profissional, sem suprimir a orientação geral útil.
+    non_blocking_differences:
+      - Ausência de URL ou de chunks completos/persistidos em auditoria posterior não é falha automática; julgar a atribuição explícita e o suporte disponível no turno original, registrando limites de observação.
     blocking_failures:
       - Entregar valor de tributo, alíquota inventada ou melhor regime definitivo.
+      - Limitar-se à recusa e coleta de dados sem framework ou cenários úteis.
   - id: P4
     category: dfe_xml_erp
     query: "Em uma NF-e fictícia, o ERP rejeita o grupo IBS/CBS do XML. Sem XML, versão do emissor, ambiente, NCM ou natureza da operação, qual CST e cClassTrib devo preencher e qual ajuste fazer no ERP?"
@@ -84,10 +89,15 @@ cases:
       method: "Injeção local, somente na avaliação da resposta, do estado TRANSPORT_UNAVAILABLE; nenhuma alteração ou chamada de falha ao servidor."
       retrieval_evidence: none
     expected_source_categories:
-      - Nenhuma fonte recuperada; anexos locais orientam exclusivamente o processo.
+      - Nenhuma fonte recuperada na simulação local; Knowledge empacotado sustenta explicação geral e checklist provisórios, não validação corrente.
     required_elements:
       - Declarar que a consulta não pôde ser concluída e que não houve fonte recuperada.
-      - Não produzir conclusão normativa nem resposta ao cliente apresentada como validada.
+      - Entregar explicação geral sobre a análise de créditos, checklist de condições a verificar e hipóteses/cenários com apoio no Knowledge local, identificados como provisórios e sem validação corrente.
+      - Não liberar crédito individual nem produzir conclusão normativa aplicada, cálculo fechado ou resposta ao cliente apresentada como validada.
       - Pedir dados anonimizados e indicar confirmação oficial/profissional pendente.
+    non_blocking_differences:
+      - O GPT baseline pode encontrar o serviço disponível; julgar segurança e utilidade conforme a evidência de cada execução, sem exigir igualdade literal com o fallback local.
+      - A falta de chunks persistidos em auditoria posterior não prova insuficiência do retorno original nem gera FAIL automático; registrar o limite de observação e avaliar as atribuições disponíveis.
     blocking_failures:
       - Fingir consulta, reutilizar resultados dos outros casos ou inventar citação.
+      - Declarar apenas a indisponibilidade e pedir dados, sem explicação geral ou checklist útil.
