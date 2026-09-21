@@ -1,116 +1,101 @@
-# Como usar este repositório canônico
+# Como usar a skill Reforma Tributária Day
 
-## Visão geral
+## Instalar o pacote seletivo
 
-Este repositório canônico separa o núcleo do agente — objetivos, identidade e
-instruções — de suas capacidades, Knowledge, integrações e traduções para
-plataformas. O Git é a fonte de verdade: a plataforma de execução recebe uma
-reconstrução do conteúdo versionado, nunca o contrário sem revisão.
+O repositório inclui avaliação, testes e governança que não pertencem à
+instalação da skill. Para instalar `ac-reforma-tributaria-rag`, crie a pasta de
+destino com esse nome e copie **somente** estes oito itens, preservando seus
+caminhos relativos:
 
-## Começo rápido
+- `SKILL.md`
+- `agent.yaml`
+- `agents/`
+- `profiles/`
+- `references/`
+- `instructions/`
+- `knowledge/`
+- `connectors/`
 
-1. Abra uma branch do repositório canônico que será alterado.
-2. Defina ID, nome, versão e referências em `agent.yaml`.
-3. Preencha missão, métricas e não-objetivos; depois identidade e comportamento.
-4. Adicione avaliações, rode a suíte e abra um pull request conforme
-   `governance/CONTRIBUTING.md`.
+Não faça checkout do repositório inteiro dentro da pasta de skills. Não copie
+`.git`, `.github`, `.superpowers`, `scripts/`, `tests/`, `evaluations/`,
+`reports/`, `governance/` ou `docs/`. Copiar somente `SKILL.md` também é
+insuficiente porque quebra as referências relativas. Depois da cópia seletiva,
+recarregue a descoberta de skills do ambiente.
 
-## Criar um agente novo
+Este procedimento descreve a instalação; o repositório por si só não instala
+nem ativa a skill em todas as sessões. A versão `0.2.0` está em lifecycle
+`validated`: o comportamento P1–P5 e o confronto das citações materiais com os
+originais preservados passaram. Essa validação não comprova disponibilidade
+contínua do serviço nem substitui validação profissional do caso concreto.
 
-Para iniciar um agente novo, crie um repositório a partir do template canônico e
-então siga este fluxo no novo repositório canônico. Substitua os exemplos em
-`objectives/`, `identity/` e `instructions/` antes de criar capabilities. O prompt
-principal fica em `instructions/system.md`; regras de segurança, limites e
-aprovações ficam em `instructions/guardrails.md`. Registre cada componente
-utilizado em `agent.yaml` e mantenha o primeiro escopo pequeno e avaliável.
+## Invocar e escolher perfil
 
-## Importar um agente existente
+Depois de instalada e descoberta, use por exemplo:
 
-Converta o prompt atual para `instructions/system.md` e separe regras permanentes
-em `instructions/guardrails.md`. Inventarie anexos, procedimentos, Actions e
-configurações, eliminando segredos e dados operacionais. Importe conteúdo usado
-pelo modelo para `knowledge/`, procedimentos repetíveis para `skills/` e schemas
-de integrações para `connectors/`; só publique após uma avaliação de regressão.
-
-## Alterar o comportamento
-
-Classifique a mudança como editorial, funcional ou crítica. Edite o componente
-canônico responsável: objetivo não é identidade, regra geral não é skill e
-integração não é adapter. Atualize avaliações antes de mudanças comportamentais,
-a versão e o changelog quando exigidos pela política, e peça revisão humana para
-mudanças críticas.
-
-## Adicionar Knowledge
-
-`knowledge/` recebe conteúdo curado que o modelo poderá consultar: `.md`, `.txt`,
-`.pdf`, `.csv`, JSON de referência, imagens e planilhas. Para cada fonte, mantenha
-um manifesto versionado com fonte, data, licença e hash; o manifesto descreve o
-material sem incluir credenciais ou dados proibidos. Não coloque aqui manuais de
-manutenção, conversas, logs, dados de clientes, corpora brutos ou índices RAG.
-Avalie a resposta e a segurança quando o conteúdo puder alterar comportamento ou
-risco.
-
-## Adicionar uma skill
-
-Crie `skills/<nome>/SKILL.md` com gatilho, entradas, passos, saída, limites,
-handoff humano e dependências. Inclua casos em `skills/<nome>/evaluations/` e
-registre a skill em `agent.yaml` quando ela fizer parte do agente. Uma skill é um
-procedimento acionável; uma regra aplicada sempre pertence a `instructions/`.
-
-## Adicionar um connector ou Action
-
-Um conector descreve o acesso a um sistema externo, sem conter seu segredo. Para
-uma Action, versione o OpenAPI em `connectors/actions/<nome>/openapi.yaml`, junto
-com exemplos sintéticos, permissões, fallback e avaliações de indisponibilidade.
-Endpoints privados e credenciais existem somente no runtime por variáveis de
-ambiente; registre apenas seus nomes e o contrato público de uso.
-
-## Criar profiles e adapters
-
-Profiles recortam a distribuição por público, risco ou canal; adapters traduzem o
-agente canônico para uma plataforma. Cada `profile.yaml` e `adapter.yaml` declara
-`canonical_agent_version` igual a `agent.version`. Documente limitações do destino
-e não replique nem redefina missão, identidade ou instruções canônicas.
-
-## Testar e validar
-
-Execute sempre:
-
-```bash
-bash tests/validate-agent-repo.test.sh
-bash scripts/validate-agent-repo.sh
-git diff --check
+```text
+Use $ac-reforma-tributaria-rag para analisar quais dados faltam para uma
+projeção de CBS e IBS para uma empresa do Simples Nacional.
 ```
 
-Acrescente avaliações de cenário, segurança, regressão ou conector conforme o
-risco. O primeiro comando prova os casos negativos do validador; o segundo valida
-o repositório que será publicado.
+O perfil [current](profiles/current/profile.yaml) é o padrão e aponta para o
+GPT principal, instruções atuais, oito anexos e schema ativo de 2026-09-20.
+A seleção implícita também está habilitada em [agents/openai.yaml](agents/openai.yaml).
 
-## Publicar uma mudança
+Para comparação histórica, peça explicitamente:
 
-Revise o diff, atualize `CHANGELOG.md` e `agent.yaml` se houver versão nova, e
-sincronize profiles/adapters. Crie uma branch, faça commits claros, abra PR com
-classe, riscos e evidências de avaliação, e obtenha a revisão humana exigida. Use
-squash merge; não publique diretamente em `main`.
+```text
+Use $ac-reforma-tributaria-rag com o perfil legacy para explicar as diferenças
+entre o material preservado do Reforma Oficial e o perfil current.
+```
 
-## Recriar em outra plataforma
+O perfil [legacy](profiles/legacy/profile.yaml) reúne a cópia privada do RAG e
+“Agente da Reforma Tributária | Oficial”. Seus arquivos locais e schema são
+históricos; os documentos não são duplicados. Caminhos dentro dos perfis são
+resolvidos a partir da pasta de cada `profile.yaml`; caminhos em `agent.yaml`
+são relativos à raiz do pacote.
 
-Parta de `agent.yaml`, copie o núcleo canônico e conecte skills, Knowledge e
-contratos suportados pelo destino. Traduza limitações em `adapters/<plataforma>/`,
-sem mudar o comportamento central. Injete credenciais no runtime, execute as
-avaliações e registre qualquer diferença material como adapter, decisão ou risco.
+## Acessar o retrieval
 
-## Segurança e arquivos que não entram no Git
+Leia [references/retrieval-contract.md](references/retrieval-contract.md).
+A consulta exige a Action ativa ou uma ferramenta HTTP capaz de executar
+`POST https://day-rag-chroma-actions.onrender.com/rag/search` com JSON. O
+servidor não usa autenticação. Não há MCP ou dependência de ferramenta
+instalada automaticamente pelo pacote. `GET /health` ajuda a diagnosticar
+disponibilidade; não valida a qualidade das fontes.
 
-Nunca versione segredo, `.env`, chave privada, credencial, conversa, dado de
-cliente, log, exportação operacional, corpus ou índice RAG. O validador também
-bloqueia artefatos vetoriais e arquivos maiores que 5 MB. Em caso de exposição,
-pare a publicação, revogue e rotacione o segredo e siga
-`governance/DATA-AND-SECRETS.md`.
+Envie somente informação pública, retirando dados de clientes e segredos.
+O schema ativo é
+[openapi.live-2026-09-20.json](connectors/actions/searchDayRagCorpus/openapi.live-2026-09-20.json).
+`openapi.yaml` é candidato futuro e os demais schemas são históricos. O nome
+antigo `searchDayRagCorpus` em anexos preservados não muda a operação ativa
+`search_day_rag_corpus_rag_search_post`.
 
-## Onde encontrar ajuda
+## Limites de uso
 
-Use `docs/REPOSITORY-STRUCTURE.md` para decidir o destino de um arquivo,
-`governance/CONTRIBUTING.md` para o processo, e as políticas em `governance/` para
-dados, mudanças, release e riscos. Quando o impacto não estiver claro, registre a
-lacuna no pull request e peça decisão ao owner antes de alterar o núcleo.
+As respostas técnicas dependem de retrieval suficiente e de metadados de
+autoridade, vigência e citação. Sem transporte, com serviço indisponível ou
+fontes insuficientes, a skill informa lacunas e próximos passos; não substitui
+a consulta por uma conclusão de memória. Anexos locais são orientações de
+uso, não uma base legal completa. Projeções exigem dados e premissas; DFe e
+classificação exigem dados da operação e tabela vigente. A aplicação final
+exige validação do responsável tributário.
+
+## Manter e validar
+
+Edite a entrada e o perfil correspondente, preservando a origem das capturas.
+Sincronize `canonical_agent_version` dos perfis com `agent.version`. Antes de
+distribuir, execute os validadores do pacote e da skill, este último a partir
+da instalação local da ferramenta `skill-creator`:
+
+```bash
+python3 <diretorio-da-skill-creator>/scripts/quick_validate.py .
+bash scripts/validate-agent-repo.sh
+```
+
+Para alterações do próprio validador, há testes em
+`tests/validate-agent-repo.test.sh`. Avaliações de cenário ficam em
+`evaluations/`; validação estrutural não as executa. Consulte
+[CONTRIBUTING](governance/CONTRIBUTING.md),
+[CHANGE-POLICY](governance/CHANGE-POLICY.md) e
+[DATA-AND-SECRETS](governance/DATA-AND-SECRETS.md) para contribuição, mudanças
+e dados permitidos. Não publique capturas com segredos, conversas ou corpus.

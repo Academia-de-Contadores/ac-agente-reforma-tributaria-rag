@@ -23,6 +23,13 @@ fi
 
 bash "$validator"
 
+agent_version="$(awk '
+  /^agent:[[:space:]]*$/ { in_agent = 1; next }
+  in_agent && /^[^[:space:]]/ { exit }
+  in_agent && $1 == "version:" { print $2; exit }
+' "$root/agent.yaml")"
+test -n "$agent_version"
+
 fixture="$(mktemp -d)"
 trap 'rm -rf "$fixture"' EXIT
 cp -R "$root/." "$fixture/"
@@ -32,12 +39,12 @@ mkdir -p "$fixture/profiles/validation-fixture" \
 printf '%s\n' \
   'schema_version: 1' \
   'name: validation-fixture' \
-  'canonical_agent_version: 0.1.0' \
+  "canonical_agent_version: $agent_version" \
   > "$fixture/profiles/validation-fixture/profile.yaml"
 printf '%s\n' \
   'schema_version: 1' \
   'name: validation-fixture' \
-  'canonical_agent_version: 0.1.0' \
+  "canonical_agent_version: $agent_version" \
   'target: validation-fixture' \
   > "$fixture/adapters/validation-fixture/adapter.yaml"
 

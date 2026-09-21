@@ -3,33 +3,44 @@
 | Campo | Valor |
 | --- | --- |
 | ID | `ac.reforma-tributaria-rag` |
-| Versão | `0.1.0` |
-| Lifecycle | `source-capture` |
+| Versão | `0.2.0` |
+| Lifecycle | `validated` |
+| Skill | `$ac-reforma-tributaria-rag` |
 
 ## Propósito
 
 Atua como assistente consultivo sobre a Reforma Tributária do Consumo com busca
-RAG nas coleções Day v2.1 via Chroma Cloud.
+RAG no corpus Day V2.3 via serviço externo conectado ao Chroma Cloud.
 
-Este repositório é a fonte de verdade do agente existente. Profiles e adapters
-apenas recortam ou traduzem seu núcleo canônico; não redefinem o comportamento.
+O repositório contém o pacote distribuível da skill e também materiais de
+desenvolvimento. O pacote seletivo começa em [SKILL.md](SKILL.md) e usa a
+apresentação em [agents/openai.yaml](agents/openai.yaml). A versão está
+validada: passou no comportamento P1–P5 e no confronto de suas citações
+materiais com os artefatos originais preservados.
 
 ## Usar e manter este agente
 
-1. Leia `objectives/`, `identity/` e `instructions/` antes de operar ou alterar o
-   agente; esses diretórios definem missão, papel, comportamento e limites.
-2. Para reconstruir ou adaptar esta versão, siga `HOW-TO-USE.md` e use
-   `agent.yaml` como índice dos componentes canônicos.
-3. Registre novas capacidades em `skills/`, fontes curadas em `knowledge/` e
-   contratos externos em `connectors/`; nunca registre credenciais.
-4. Adicione avaliações para cada mudança comportamental e execute:
+Após instalar somente os oito itens distribuíveis descritos em
+[HOW-TO-USE.md](HOW-TO-USE.md) em uma pasta de skills reconhecida pelo Codex,
+invoque:
 
-   ```bash
-   bash tests/validate-agent-repo.test.sh
-   bash scripts/validate-agent-repo.sh
-   ```
+```text
+Use $ac-reforma-tributaria-rag para analisar minha dúvida sobre créditos de CBS,
+consultando as fontes e indicando o que falta para concluir.
+```
 
-5. Siga o processo de contribuição antes de abrir um pull request.
+O perfil [current](profiles/current/profile.yaml) é o padrão. Para o RAG
+legado/Reforma Oficial ou comparação histórica, solicite explicitamente o
+perfil [legacy](profiles/legacy/profile.yaml). Ambos referenciam os anexos
+preservados, sem duplicação. O perfil histórico não comprova vigência atual.
+
+Leia [HOW-TO-USE.md](HOW-TO-USE.md) para instalação, transporte HTTP e
+manutenção. O [contrato de retrieval](references/retrieval-contract.md) usa o
+schema ativo capturado em 2026-09-20; `openapi.yaml` permanece candidato futuro.
+A skill não instala a Action ou um MCP: exige ferramenta HTTP/Action disponível
+para consultar o serviço externo. Na indisponibilidade ou falta de base,
+declara a lacuna e não fecha conclusão normativa. Não envie dados de clientes
+ou segredos. Decisões de aplicação exigem validação profissional.
 
 ## Guias do repositório
 
