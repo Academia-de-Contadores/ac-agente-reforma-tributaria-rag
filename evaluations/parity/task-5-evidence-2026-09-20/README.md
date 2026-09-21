@@ -1,8 +1,16 @@
 # Evidências independentes da Task 5 — 2026-09-20
 
-Veredito global: **FAIL**. Status da Task: **DONE_WITH_CONCERNS**.
-Execução: **5/5 perguntas**, skill local **5/5 PASS**, comparação observada **3 PASS / 2 FAIL** (P3 e P5).
-Sem promoção de lifecycle, sem mudança de versão, sem commit de release e sem push.
+> **HISTÓRICO / SUPERADO PARA O COMPORTAMENTO ATUAL.** Este índice preserva a
+> primeira execução e seus resultados sem recalculá-los. A nova execução com a
+> rubrica alinhada ao GPT está em
+> [gpt-comparison-2026-09-20-r2.md](../gpt-comparison-2026-09-20-r2.md) e passou
+> 5/5 no comportamento e no confronto posterior com os originais.
+
+Veredito global histórico, sob a rubrica anterior: **FAIL**. Status da Task:
+**DONE_WITH_CONCERNS**. Execução histórica: **5/5 perguntas**, skill local
+**5/5 PASS**, comparação observada **3 PASS / 2 FAIL** (P3 e P5). Naquela
+rodada não houve promoção de lifecycle, mudança de versão, commit de release ou
+push.
 
 ## Evidências
 
@@ -27,7 +35,14 @@ Em P3 o GPT afirmou recuperar o art. 41 da LC 214/2025 como GOLD/CURRENT, normat
 
 Em P5 o GPT apresentou o art. 381, o percentual de 9,25% e fontes GOLD/CURRENT, sem URLs. Na auditoria sem nova consulta, declarou não ter retrieved_chunks, source_status ou metadados comprováveis, retirou a atribuição e disse que a orientação precisava de revisão antes de aplicação.
 
-Esses achados são falhas de sustentação/rastreabilidade do retrieval e de exposição de lacuna na resposta original. **Não provam que o conteúdo da lei ou o percentual sejam falsos, nem diagnosticam falha no servidor.** O serviço respondeu normalmente às consultas HTTP locais; a UI mostrou os pedidos da Action, mas não seu JSON de resposta. Pode haver limitação de disponibilização/persistência do retorno entre turnos; essa hipótese requer investigação.
+Sob a rubrica anterior, esses achados foram classificados como falhas de
+sustentação/rastreabilidade posterior. Eles **não estabelecem que a resposta
+original omitiu uma lacuna observável naquele turno**, não provam que o conteúdo
+da lei ou o percentual sejam falsos e não diagnosticam falha no servidor. O
+serviço respondeu normalmente às consultas HTTP locais; a UI mostrou os pedidos
+da Action, mas não seu JSON de resposta. Pode haver limitação de
+disponibilização/persistência do retorno entre turnos; essa hipótese requer
+investigação.
 
 P5 não é reprovada por diferir da resposta local: a skill exercitou indisponibilidade de transporte simulada, enquanto o GPT teve consulta real autorizada. A reprovação online decorre da evidência que não conseguiu sustentar, não dessa diferença de disponibilidade.
 
