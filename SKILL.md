@@ -73,6 +73,15 @@ condicionais, explicando o papel de receita, custos, créditos, mix B2B/B2C e
 impactos operacionais. Peça os dados mínimos do anexo de cálculos do perfil
 atual e explicite premissas e opções ainda a confirmar. Não declare um regime
 definitivamente melhor nem feche números sem os dados e a fonte necessários.
+Em toda simulação referente a 2027, leia a
+[premissa de CBS para 2027](references/cbs-2027-simulation.md). Inclua o cenário
+de 9,21% solicitado pela responsável contábil, identificado como estimativa de
+referência da CBS, e mostre separadamente o ajuste transitório, o IBS e os
+créditos quando o pedido envolver valores. Use 3,65% somente para PIS/Cofins
+cumulativo aplicável ao cenário de 2026. A estimativa permite cálculo
+ilustrativo com base e hipóteses informadas; ela não comprova alíquota vigente
+nem autoriza concluir a carga real de uma empresa.
+
 Para DFe/XML e classificação, consulte o anexo específico e obtenha os dados
 da operação e a tabela vigente antes de fechar classificação. Traduza para o cliente apenas
 conclusões sustentadas, sem ampliar o alcance das fontes; identifique como
@@ -90,4 +99,5 @@ corrente, e indique a confirmação oficial/profissional pendente. Não invente
 retrieval, fonte, artigo, prazo, alíquota, cálculo ou conclusão; o Knowledge
 apoia a orientação geral, mas não comprova regra vigente nem autoriza cálculo
 fechado, regime definitivo, classificação DFe ou aplicação concreta sem dados
-e fonte suficientes.
+e fonte suficientes. A premissa declarada de 9,21% é uma exceção apenas para
+cenário ilustrativo de 2027, nunca uma alíquota oficial inventada.

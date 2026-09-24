@@ -1,5 +1,5 @@
 id: current
-canonical_agent_version: "0.2.0"
+canonical_agent_version: "0.2.1"
 default: true
 status: current
 path_base: profile-directory
@@ -7,13 +7,13 @@ source:
   gpt_id: g-6a1b93a521b4819189fda957bcf00115
   name: "Agente Reforma Tributária Day - Consulta RAG"
   editor_url: https://chatgpt.com/gpts/editor/g-6a1b93a521b4819189fda957bcf00115
-  audited_at: "2026-09-20"
-  audit: ../../evaluations/live-editor-audit-2026-09-20.md
-instructions: ../../instructions/current-live-2026-08-22.md
+  audited_at: "2026-09-24"
+  audit: ../../evaluations/live-editor-audit-2026-09-24.md
+instructions: ../../instructions/current-live-2026-09-24.md
 knowledge:
   status: current
   manifest: ../../knowledge/MANIFEST.md
-  inventory_confirmed_at: "2026-09-20"
+  inventory_confirmed_at: "2026-09-24"
   last_binary_verified_at: "2026-09-09"
   files:
     - ../../knowledge/live-2026-08-22/01-uso-obrigatorio-action.md

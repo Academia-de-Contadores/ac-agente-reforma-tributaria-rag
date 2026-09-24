@@ -3,7 +3,7 @@
 | Campo | Valor |
 | --- | --- |
 | ID | `ac.reforma-tributaria-rag` |
-| Versão | `0.2.0` |
+| Versão | `0.2.1` |
 | Lifecycle | `validated` |
 | Skill | `$ac-reforma-tributaria-rag` |
 
@@ -15,8 +15,10 @@ RAG no corpus Day V2.3 via serviço externo conectado ao Chroma Cloud.
 O repositório contém o pacote distribuível da skill e também materiais de
 desenvolvimento. O pacote seletivo começa em [SKILL.md](SKILL.md) e usa a
 apresentação em [agents/openai.yaml](agents/openai.yaml). A versão está
-validada: passou no comportamento P1–P5 e no confronto de suas citações
-materiais com os artefatos originais preservados.
+validada. A base 0.2.0 passou no comportamento P1–P5 e no confronto de suas
+citações materiais com os artefatos originais preservados. A correção 0.2.1
+acrescenta o cenário contábil explícito para simulações de 2027, sem tratá-lo
+como alíquota oficial, e foi testada na regressão correspondente.
 
 ## Usar e manter este agente
 
