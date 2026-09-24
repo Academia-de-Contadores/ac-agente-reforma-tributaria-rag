@@ -98,6 +98,12 @@ impedem tratar o trecho como fundamento normativo. Não transforme estimativa em
 alíquota vigente nem o texto histórico em regra atual. Valores ausentes/null
 não equivalem a autorização normativa; identifique a confirmação oficial
 necessária antes da aplicação concreta, sem suprimir orientação geral útil.
+Para simulações de 2027, a premissa de 9,21% aprovada pela responsável contábil
+tem o uso restrito descrito em [cbs-2027-simulation.md](cbs-2027-simulation.md):
+ela pode entrar numa conta ilustrativa com base e hipóteses dadas, inclusive
+quando o retrieval não confirmar a taxa, desde que seja explicitamente marcada
+como estimativa. Isso não transforma o resultado em valor devido nem dispensa
+checar a alíquota oficial vigente antes de orientar a aplicação real.
 
 Quando houver chunks, confira conteúdo e metadados: o resumo não pode
 contrariá-los nem ampliar seu alcance. Sem chunks completos, citações ou
@@ -152,7 +158,9 @@ Entregue ainda orientação geral útil com o Knowledge local: explicação do t
 checklist de análise, hipóteses/cenários e dados anonimizados a coletar. Separe
 essa orientação provisória dos pontos a confirmar na fonte oficial e com o
 responsável, dizendo que não houve validação corrente. Em regimes/projeções,
-mostre o framework de comparação sem declarar vencedor ou fechar números; em
+mostre o framework de comparação sem declarar vencedor ou fechar apuração real.
+Um cenário ilustrativo de 2027 pode usar a premissa de 9,21% quando a base e
+as hipóteses forem dadas, conforme a referência específica; em
 créditos, organize a análise e as condições a verificar sem liberar crédito
 individual. Não finja consulta nem produza conclusão normativa aplicada,
 cálculo fechado, regime definitivo, classificação DFe ou resposta a cliente

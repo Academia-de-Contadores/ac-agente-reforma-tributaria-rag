@@ -16,6 +16,16 @@ Todas as mudanças relevantes deste agente serão registradas aqui.
 
 - Estrutura inicial do template canônico.
 
+## 0.2.1 — 2026-09-24
+
+- Atualiza o GPT online e a skill para incluir a premissa contábil estimada de
+  9,21% em simulações de 2027, sem afirmar alíquota oficial da CBS.
+- Separa, no cenário padrão, CBS estimada de 9,11% após ajuste de 0,1 ponto
+  percentual e IBS transitório de 0,10%; restringe 3,65% ao PIS/Cofins
+  cumulativo aplicável em 2026.
+- Preserva os oito anexos e a Action do GPT, registra captura e teste de
+  regressão da mudança.
+
 ## 0.2.0 — 2026-09-20
 
 - Promove o agente para `validated` após reteste funcional independente com PASS 5/5 frente às respostas reais preservadas do GPT de referência.

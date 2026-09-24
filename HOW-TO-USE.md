@@ -23,9 +23,9 @@ insuficiente porque quebra as referências relativas. Depois da cópia seletiva,
 recarregue a descoberta de skills do ambiente.
 
 Este procedimento descreve a instalação; o repositório por si só não instala
-nem ativa a skill em todas as sessões. A versão `0.2.0` está em lifecycle
-`validated`: o comportamento P1–P5 e o confronto das citações materiais com os
-originais preservados passaram. Essa validação não comprova disponibilidade
+nem ativa a skill em todas as sessões. A versão `0.2.1` está em lifecycle
+`validated`: a base 0.2.0 passou em P1–P5 e no confronto de citações com os
+originais; a correção 0.2.1 foi testada na regressão de 2027. Essa validação não comprova disponibilidade
 contínua do serviço nem substitui validação profissional do caso concreto.
 
 ## Invocar e escolher perfil
@@ -38,7 +38,8 @@ projeção de CBS e IBS para uma empresa do Simples Nacional.
 ```
 
 O perfil [current](profiles/current/profile.yaml) é o padrão e aponta para o
-GPT principal, instruções atuais, oito anexos e schema ativo de 2026-09-20.
+GPT principal, instruções atualizadas em 2026-09-24, oito anexos preservados
+e schema ativo de 2026-09-20.
 A seleção implícita também está habilitada em [agents/openai.yaml](agents/openai.yaml).
 
 Para comparação histórica, peça explicitamente:
